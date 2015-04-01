@@ -80,7 +80,7 @@ function loaded () {
 }
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 $(document).on('click','#CustLoginBtn',function(){
-	alert('done');
+	alert('df');
 	/*
 	
 	$("#CustLoginBtn").attr("disabled","disabled");
@@ -115,7 +115,8 @@ $(document).on('click','#CustLoginBtn',function(){
 	*/
 	});
 	$("#forgot_password").click(function(){
-		window.location='forgot-password.html';
+		alert("forget Password");
+		window.open("forgot-password.html",'_self');
 		
 		});
 </script>
