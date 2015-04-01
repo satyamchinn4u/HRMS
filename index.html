@@ -45,7 +45,7 @@
         <div class="form-group">
           <button type="submit" class="btn btn-success" id="CustLoginBtn">Submit</button>
         </div>
-        <div class="form-group"><a class="btn btn-info" id="newReg">New Registration</a></div> 
+        <div class="form-group"><button type="button"  class="btn btn-info" id="newReg">New Registration</button></div> 
         <div class="login-bottom">
           <div class="col-xs-4"><img src="img/login-bottom-1.png" /></div>
           <div class="col-xs-4"><img src="img/login-bottom-2.png" /></div>
@@ -80,19 +80,16 @@ function loaded () {
 }
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 $(document).on('click','#CustLoginBtn',function(){
-	alert('df');
-	window.localStorage.setItem('HRMSemail','sTYAM');
-	window.location='dashboard.html';
-	/*
+
 	
 	$("#CustLoginBtn").attr("disabled","disabled");
 	$("#newReg").hide(100);
 	
-	var URL='http://localhost/hrmslogin/';
+	var URL='http://hrms.ctrls.com/mobile/test/';
 	var email=$("#email").val();
 	var password=$("#password").val();
 	$.ajax({
-				url:'http://localhost/test/hrms/login.php',
+				url:'http://hrms.ctrls.com/mobile/test/login.php',
 				type: 'POST',
 				crossDomain: true,
 				data:{email:email,password:password},
@@ -114,14 +111,11 @@ $(document).on('click','#CustLoginBtn',function(){
 							
 						});
 	
-	*/
 	});
-		
-		var displayHello = function() {
-				alert("forget Password");
+		$(document).on('click',"#newReg",function(){
 			
-			
-		}
+				//window.location='dashboard.html';
+			});
 </script>
 </body>
 </html>
