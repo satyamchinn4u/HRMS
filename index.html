@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<!-- HTML5 Mobile Boilerplate -->
+<!--[if IEMobile 7]><html class="no-js iem7"><![endif]-->
+<!--[if (gt IEMobile 7)|!(IEMobile)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<!-- HTML5 Boilerplate -->
+<!--[if lt IE 7]><html class="no-js lt-ie9 lt-ie8 lt-ie7" lang="en"> <![endif]-->
+<!--[if (IE 7)&!(IEMobile)]><html class="no-js lt-ie9 lt-ie8" lang="en"><![endif]-->
+<!--[if (IE 8)&!(IEMobile)]><html class="no-js lt-ie9" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+<head>
+<meta charset="utf-8">
+<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame -->
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<title>Cloud Hosting Services India | Tier 4 Data Center</title>
+<meta name="description" content="Ctrl4C offers Cloud Hosting Services, Cloud Solutions, Cloud Disaster Recovery Services, Cloud Monitoring, Cloud Database &amp; Bigdata and many other cloud based services.">
+<meta name="keywords" content="cloud hosting services, tier 4 cloud, cloud service providers, cloud hosting india, cloud solutions">
+<meta name="author" content="www.ctrl4c.com">
+<meta http-equiv="cleartype" content="on">
+<link rel="shortcut icon" href="/favicon.ico">
+<!-- Responsive and mobile friendly stuff -->
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, target-densitydpi=160dpi, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<link href="css/bootstrap.min.css" rel="stylesheet" type="text/css" media="screen" />
+<link href="css/style.css" rel="stylesheet" type="text/css" media="screen" />
+</head>
+<body onload="loaded()">
+<header><img src="img/logo.png" /></header>
+<section id="wrapper">
+  <div id="scroller">
+    <div class="contentarea login">
+        <div class="form-group">
+          <input type="number" class="form-control" id="email" placeholder="Employee Code">
+        </div>
+        <div class="form-group">
+          <input type="password" class="form-control" id="password" placeholder="Password">
+        </div>
+        <div class="form-group">
+          <p class="text-right"><a href="forgot-password.html">Forgot Password</a></p>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-success" id="CustLoginBtn">Submit</button>
+        </div>
+        <div class="form-group"><a href="register.html" class="btn btn-info" id="newReg">New Registration</a></div>
+        <div class="login-bottom">
+          <div class="col-xs-4"><img src="img/login-bottom-1.png" /></div>
+          <div class="col-xs-4"><img src="img/login-bottom-2.png" /></div>
+          <div class="col-xs-4"><img src="img/login-bottom-3.png" /></div>
+        </div>
+
+    </div>
+  </div>
+</section>
+<div class="login-footer">
+  <div class="login-footer-title">Login using</div>
+  <div class="col-xs-4 fb"><img src="img/fb.png" /></div>
+  <div class="col-xs-4 linkedin"><img src="img/linkedin.png" /></div>
+  <div class="col-xs-4 google"><img src="img/google.png" /></div>
+</div>
+<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
+<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+<script type="text/javascript" src="js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="js/iscroll.js"></script> 
+<script type="text/javascript" src="js/loginCheck.js"></script> 
+<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script type="text/javascript">
+var myScroll;
+function loaded () {
+	myScroll = new IScroll('#wrapper', {
+		scrollbars: true,
+		mouseWheel: true,
+		interactiveScrollbars: true,
+		shrinkScrollbars: 'scale',
+		fadeScrollbars: true
+	});
+}
+document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
+$(document).on('click','#CustLoginBtn',function(){
+	
+	$("#CustLoginBtn").attr("disabled","disabled");
+	$("#newReg").hide(100);
+	
+	var URL='http://localhost/hrmslogin/';
+	var email=$("#email").val();
+	var password=$("#password").val();
+	$.ajax({
+				url:'http://localhost/test/hrms/login.php',
+				type: 'POST',
+				crossDomain: true,
+				data:{email:email,password:password},
+				success: function(data){
+				
+				if(data!='0' && data)
+				{
+				window.localStorage.setItem('HRMSemail',data);
+				window.location='dashboard.html';
+				}else
+				{
+					$("#CustLoginBtn").removeAttr('disabled');
+						$("#newReg").show(100);
+				alert('Invalid Username Or password');	
+				
+				}
+										
+   		   }
+							
+						});
+	
+	});
+</script>
+</body>
+</html>
