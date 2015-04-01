@@ -1,4 +1,4 @@
-var serviceURL = "http://localhost/test/hrms/";
+var serviceURL = "http://hrms.ctrls.com/mobile/test/";
 
 var employees;
 
