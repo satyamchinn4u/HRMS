@@ -80,35 +80,7 @@ function loaded () {
 }
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 $(document).on('click','#CustLoginBtn',function(){
-	
-	$("#CustLoginBtn").attr("disabled","disabled");
-	$("#newReg").hide(100);
-	
-	var URL='http://localhost/hrmslogin/';
-	var email=$("#email").val();
-	var password=$("#password").val();
-	$.ajax({
-				url:'http://localhost/test/hrms/login.php',
-				type: 'POST',
-				crossDomain: true,
-				data:{email:email,password:password},
-				success: function(data){
-				
-				if(data!='0' && data)
-				{
-				window.localStorage.setItem('HRMSemail',data);
-				window.location='dashboard.html';
-				}else
-				{
-					$("#CustLoginBtn").removeAttr('disabled');
-						$("#newReg").show(100);
-				alert('Invalid Username Or password');	
-				
-				}
-										
-   		   }
-							
-						});
+	alert("Done");
 	
 	});
 </script>
