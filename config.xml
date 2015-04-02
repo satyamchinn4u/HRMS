@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+    <widget id="com.Ctrls.Hrms" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
+
+
+        <!-- versionCode is optional and Android only -->
+
+        <preference name="phonegap-version" value="3.5.0" />
+		<preference name="ErrorUrl" value="error.html"/>
+		<preference name="InAppBrowserStorageEnabled" value="true"/>
+		<preference name="LoadingDialog" value="Ctrl4c,loding..."/>
+		<preference name="LoadingPageDialog" value="Ctrl4c,loding..."/>
+
+
+
+
+       <name>HrmsProj</name>
+
+        <description>
+        An example for phonegap build docs. 
+        </description>
+
+        <author href="http://ctrl4c.com" email="satyam.cth@ctrls.in">
+       Satyam Chinna Rao
+        </author>
+		 <content src="index.html" />
+    <access origin="*" />
+
+    </widget>
+

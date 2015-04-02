@@ -40,12 +40,12 @@
           <input type="password" class="form-control" id="password" placeholder="Password">
         </div>
         <div class="form-group">
-          <p class="text-right"><a href="forgot-password.html">Forgot Password</a></p>
+          <p class="text-right"><!--<a href="forgot-password.html"  rel="external">Forgot Password</a>--></p>
         </div>
         <div class="form-group">
           <button type="submit" class="btn btn-success" id="CustLoginBtn">Submit</button>
         </div>
-        <div class="form-group"><a href="register.html" class="btn btn-info" id="newReg">New Registration</a></div>
+        <div class="form-group"><button type="button"  class="btn btn-info" id="forgetPassword">Forgot Password</button></div> 
         <div class="login-bottom">
           <div class="col-xs-4"><img src="img/login-bottom-1.png" /></div>
           <div class="col-xs-4"><img src="img/login-bottom-2.png" /></div>
@@ -61,12 +61,12 @@
   <div class="col-xs-4 linkedin"><img src="img/linkedin.png" /></div>
   <div class="col-xs-4 google"><img src="img/google.png" /></div>
 </div>
-<script src="//code.jquery.com/jquery-1.11.2.min.js"></script> 
-<script src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
+<script src="http://code.jquery.com/jquery-1.11.2.min.js"></script> 
+<script src="http://code.jquery.com/jquery-migrate-1.2.1.min.js"></script> 
 <script type="text/javascript" src="js/bootstrap.min.js"></script> 
 <script type="text/javascript" src="js/iscroll.js"></script> 
 <script type="text/javascript" src="js/loginCheck.js"></script> 
-<script src="//code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.js"></script>
 <script type="text/javascript">
 var myScroll;
 function loaded () {
@@ -80,15 +80,16 @@ function loaded () {
 }
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 $(document).on('click','#CustLoginBtn',function(){
+
 	
 	$("#CustLoginBtn").attr("disabled","disabled");
 	$("#newReg").hide(100);
 	
-	var URL='http://localhost/hrmslogin/';
+	var URL='http://hrms.ctrls.com/mobile/test/';
 	var email=$("#email").val();
 	var password=$("#password").val();
 	$.ajax({
-				url:'http://localhost/test/hrms/login.php',
+				url:'http://hrms.ctrls.com/mobile/test/login.php',
 				type: 'POST',
 				crossDomain: true,
 				data:{email:email,password:password},
@@ -111,6 +112,10 @@ $(document).on('click','#CustLoginBtn',function(){
 						});
 	
 	});
+		$(document).on('click',"#forgetPassword",function(){
+			
+				window.location='forgot-password.html';
+			});
 </script>
 </body>
 </html>
