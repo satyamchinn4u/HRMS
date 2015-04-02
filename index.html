@@ -79,31 +79,6 @@ function loaded () {
 	});
 }
 
-document.addEventListener('deviceready', function() {
-
-    document.addEventListener("backbutton", ShowExitDialog, false);
-
-}, false);
-function ShowExitDialog() {
-        navigator.notification.confirm(
-                ("Do you want to Exit?"), // message
-                alertexit, // callback
-                'My APp', // title
-                'YES,NO' // buttonName
-        );
-
-    }
-	function alertexit(button){
-
-        if(button=="1" || button==1)
-        {
-
-            device.exitApp();
-        }
-
-}
-
-
 document.addEventListener('touchmove', function (e) { e.preventDefault(); }, false);
 $(document).on('click','#CustLoginBtn',function(){
 
